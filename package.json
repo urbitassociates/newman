@@ -1,6 +1,6 @@
 {
   "name": "newman",
-  "version": "5.3.2",
+  "version": "5.3.3",
   "description": "Command-line companion utility for Postman",
   "homepage": "https://github.com/postmanlabs/newman",
   "bugs": "https://github.com/postmanlabs/newman/issues",
@@ -64,7 +64,7 @@
   },
   "devDependencies": {
     "chai": "^4.3.6",
-    "dockerfile_lint": "^0.3.4",
+    "dockerfile_lint": "^0.0.9",
     "editorconfig": "^0.15.3",
     "eslint": "^7.32.0",
     "eslint-plugin-jsdoc": "^36.1.0",
