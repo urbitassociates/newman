@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM debian:bullseye-slim
 LABEL maintainer="Postman Labs <help@postman.com>"
 
 ARG NODE_VERSION=16
@@ -14,11 +14,11 @@ RUN apt-get update -y && \
     rm /opt/install_node.sh && \
     apt-get purge -y gnupg;
 
-COPY ./ /src/
+COPY . /src
 
 WORKDIR /src
 
-RUN npm install
+RUN npm install -g
 
 # Set environment variables
 ENV LC_ALL="en_US.UTF-8" LANG="en_US.UTF-8" LANGUAGE="en_US.UTF-8"
@@ -39,4 +39,4 @@ WORKDIR /etc/newman
 # docker run -v /home/collections:/etc/newman -t postman/newman_ubuntu run YourCollection.json.postman_collection \
 #                                                                          -e YourEnvironment.postman_environment \
 #                                                                          -H newman_report.html
-ENTRYPOINT ["newman"]
+CMD ["newman"]
